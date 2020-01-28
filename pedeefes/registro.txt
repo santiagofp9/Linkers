@@ -1,39 +1,71 @@
 1 Diario de la Guerra del Cerdo
 1 Bioy Casares, Adolfo
 1 Emecé
+1 1969
 1  84-487-1300-1 
+1 Realismo, Violencia, Vejez
+1 Novela
+1 240 pags.
 
 2 Huesos en el Desierto
 2 González Rodríguez, Sergio
 2 Anagrama
+2 2002
 2 978-84-339-2554-1
+2 Violencia, Periodismo, Frontera 
+2 Ensayo
+2 344 pags.
 
 3 Escatología y Apocalipsis en Tiempos Posmodernos. Una mirada desde las víctimas y los justos de la historia
 3 Mendoza-Álvarez, Carlos
 3 Verbo Divino
+3 2014
 3 978-84-9073-038-6
+3 Teología, Violencia, Filosofía
+3 Ensayo
+3 500 pags.
 
 4 Fuegos
 4 Yourcenar, Marguerite
 4 Alfaguara
+4 1936
 4 9788420422176
+4 Mitología, Erotismo, Poetas Malditos
+4 Poesía
+4 214 pags.
 
 5 Viaje: Crónicas
 5 Partida, Eugenio
 5 Salario del Miedo
+5
 5 9788420422176
+5
+5
+5
 
 6 La Historia de mis Dientes
 6 Luiselli, Valeria
 6 Sexto Piso
+6
 6 9788415601616
+6
+6
+6
 
 7 Música para Camaleones
 7 Capote, Truman
 7 Anagrama
+7
 7 978-84-339-3128-3
+7
+7
+7
 
 8 Narcoamérica. De los Andes a Manhattan
 8 Dromómanos
 8 Tusquets
+8
 8 978-84-339-3128-3
+8
+8
+8
