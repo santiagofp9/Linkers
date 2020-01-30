@@ -15,7 +15,7 @@ def subMenu():
     print("2.-Regresar al menú")
     print("3.-Salir")
 
-def menuLibro()
+def menuLibro():
     print("\n               ======================================")
     print("                            AGREGAR LIBRO            ")
     print("               ======================================")
