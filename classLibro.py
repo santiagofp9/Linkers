@@ -5,10 +5,10 @@ class Libro:
     isbn=''
     
     def __init__(self):
-        self.titulo=titulo
-        self.autor=autor     
-        self.editorial=editorial
-        self.isbn=isbn
+        self.titulo=str(input("\nIngrese titulo: "))
+        self.autor=str(input("Ingrese autor: "))   
+        self.editorial=str(input("Ingrese editorial: "))
+        self.isbn=input("Ingrese isbn: ")
     
     def set_titulo(self, titulo):
         self.titulo = titulo

@@ -19,26 +19,19 @@ menu()
 
 opcion=input("\nIngrese opción: ")
 
-def crear():
-    titulo=input("\nIngrese titulo: ")
-    autor=input("Ingrese autor: ")
-    editorial=input("Ingrese editorial: ")
-    isbn=input("Ingrese isbn: ")
-    newLibro=Libro(titulo,autor,editorial,isbn)
-
-def consultar(file):
+def consultar():
+    file=open("biblioteca.txt","r")
     print(file.read())
     file.close()
 
 
 while(opcion!=3):
-    print(opcion)
     if  opcion=="1":
         print("\n               ======================================")
         print("                            AGREGAR LIBRO            ")
         print("               ======================================")
 
-        crear()
+        newLibro=Libro()
         newLibro.agregarLibro()
         print("\n")
         subMenu()
@@ -47,6 +40,7 @@ while(opcion!=3):
             x=1
         elif(op=="2"):
             menu()
+            opcion=input("Ingrese opción: ")
         elif(op=="3"):        
             break
         else:
@@ -54,8 +48,9 @@ while(opcion!=3):
             subMenu()
             op=input("Ingrese opción: ")
     elif opcion=="2":
-        newLibro.consultar()
-        opcion=3
+        consultar()
+        menu()
+        opcion=input("Ingrese opción: ")
     else:
         print("Opción Incorrecta")
         menu()
