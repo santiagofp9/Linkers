@@ -51,6 +51,8 @@ while(opcion!=3):
         consultar()
         menu()
         opcion=input("Ingrese opción: ")
+    elif opcion=="3":
+        break
     else:
         print("Opción Incorrecta")
         menu()
