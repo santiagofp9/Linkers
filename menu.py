@@ -10,7 +10,7 @@ def menu():
     print("3.-Salir.")
 
 def subMenu():
-    print("\nDesea ingresar otro libro")
+    print("\n¿Desea ingresar otro libro?")
     print("\n1.-Ingresar otro libro.")
     print("2.-Regresar al menú")
     print("3.-Salir")
@@ -37,7 +37,7 @@ while(opcion!=3):
         subMenu()
         op=input("Elija su opcion: ")
         if(op=="1"):
-            x=1
+            continue
         elif(op=="2"):
             menu()
             opcion=input("Ingrese opción: ")
