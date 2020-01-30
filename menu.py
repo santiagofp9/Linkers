@@ -15,6 +15,11 @@ def subMenu():
     print("2.-Regresar al menú")
     print("3.-Salir")
 
+def menuLibro()
+    print("\n               ======================================")
+    print("                            AGREGAR LIBRO            ")
+    print("               ======================================")
+
 menu()
 
 opcion=input("\nIngrese opción: ")
@@ -26,11 +31,8 @@ def consultar():
 
 
 while(opcion!=3):
-    if  opcion=="1":
-        print("\n               ======================================")
-        print("                            AGREGAR LIBRO            ")
-        print("               ======================================")
-
+    if  opcion=="1":       
+        menuLibro()
         newLibro=Libro()
         newLibro.agregarLibro()
         print("\n")
