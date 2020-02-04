@@ -36,6 +36,6 @@ class Libro:
 
     def agregarLibro(self):
         self.biblioteca = open("biblioteca.txt", "at")
-        self.biblioteca.write(self.get_titulo()+", "+self.get_autor()+", "+self.get_editorial()+", "+self.get_isbn()+"\n")
+        self.biblioteca.write("Título: "+self.get_titulo()+", Autor: "+self.get_autor()+", Editorial: "+self.get_editorial()+", ISBN: "+self.get_isbn()+"\n")
         self.biblioteca.close()
 
