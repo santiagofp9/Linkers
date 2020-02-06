@@ -1,4 +1,4 @@
-from classLibro import Libro
+from libro import Libro
 
 class Menu:
     
@@ -11,8 +11,10 @@ class Menu:
         print("               ======================================")
 
         print("\n1.-Ingrese libro.")
-        print("2.-Consulte libros.")
-        print("3.-Salir.")
+        print("2.-Mostrar Biblioteca")
+        print("3.-Consultar libros.")
+        print("4.-Eliminar libros.")
+        print("5.-Salir.")
 
     def subMenu(self):
         print("\n¿Desea ingresar otro libro?")
@@ -25,16 +27,11 @@ class Menu:
         print("                            AGREGAR LIBRO            ")
         print("               ======================================")
 
-    def consultar(self):
-        file=open("biblioteca.txt","r")
-        print(file.read())
-        file.close()
-
     def iniciar(self,opcion):
         while(opcion!=3):
             if  opcion=="1":       
                 menu1.menuLibro()
-                newLibro=Libro()
+                newLibro=Biblioteca()
                 newLibro.agregarLibro()
                 print("\n")
                 menu1.subMenu()
@@ -51,10 +48,12 @@ class Menu:
                     menu1.subMenu()
                     op=input("Ingrese opción: ")
             elif opcion=="2":
-                menu1.consultar()
+                newLibro.consultarLibro()
                 menu1.menu_inicial()
                 opcion=input("Ingrese opción: ")
-            elif opcion=="3":
+            elif opcion=="4":
+                print()
+            elif opcion=="5":
                 break
             else:
                 print("Opción Incorrecta")
