@@ -120,7 +120,7 @@ while True:
     print("3.- Listado")
     print("4.- Eliminar")
     print("5.- Buscar")
-    print("5.- Salir")
+    print("6.- Salir")
 
     try:
         opcion = int(input("->: "))
