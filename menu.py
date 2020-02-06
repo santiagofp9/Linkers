@@ -22,11 +22,6 @@ class Menu:
         print("2.-Regresar al menú")
         print("3.-Salir")
 
-    def menuLibro(self):
-        print("\n               ======================================")
-        print("                            AGREGAR LIBRO            ")
-        print("               ======================================")
-    
     def agregar(self):    
         titulo = str(input("TITULO: "))
         autor = str(input("AUTOR: "))
@@ -49,28 +44,57 @@ class Menu:
             f.close()
             print("Agregado con éxito")
 
+    def listar(self):
+        f = open("biblioteca.txt", "r")
+        contenido = f.readlines()
+        for i in contenido:
+            print(i) 
+        f.close()
+
+    def consultar(self):
+        f = open("biblioteca.txt", "r")
+        
+        buscar = input("Ingrese la palabra por la que quiera buscar -> ")  
+        if buscar != "":
+            exists = False
+            for i in f.readlines():
+                if str.lower(buscar) in str.lower(i):
+                    exists = True
+                    print(i)
+            if not exists: 
+                print("No hay registros con esos datos")
+        else:
+            print("Consulta vacía")
+        f.close()
+
     def iniciar(self,opcion):
         while(opcion!=3):
             if  opcion=="1":       
-                menu1.menuLibro()
-                menu1.agregar()
+                print("\n                       =============== Agregar ==============\n")
+                self.agregar()
                 print("\n")
-                menu1.subMenu()
+                self.subMenu()
                 op=input("Elija su opcion: ")
                 if(op=="1"):
                     continue
                 elif(op=="2"):
-                    menu1.menu_inicial()
+                    self.menu_inicial()                    
                     opcion=input("Ingrese opción: ")
                 elif(op=="3"):        
                     break
                 else:
                     print("Opción Incorrecta")
-                    menu1.subMenu()
+                    self.subMenu()
                     op=input("Ingrese opción: ")
             elif opcion=="2":
-                newLibro.consultarLibro()
-                menu1.menu_inicial()
+                print("\n                       =============== BIBLIOTECA ==============\n")
+                self.listar()
+                self.menu_inicial()
+                opcion=input("Ingrese opción: ")
+            elif opcion=="3":
+                print("\n                       =============== Busqueda ==============\n")
+                self.consultar()
+                self.menu_inicial()
                 opcion=input("Ingrese opción: ")
             elif opcion=="4":
                 print()
@@ -78,7 +102,7 @@ class Menu:
                 break
             else:
                 print("Opción Incorrecta")
-                menu1.menu_inicial()
+                self.menu_inicial()
                 opcion=input("Ingrese opción: ")
 
 menu1=Menu()
