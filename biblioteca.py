@@ -131,9 +131,4 @@ class Biblioteca:
                 self.menu_inicial()
                 opcion=input("\nIngrese opción: ")
 
-menu1=Menu()
-menu1.menu_inicial()
-opcion=input("\nIngrese opción: ")
-menu1.iniciar(opcion)
-
 
