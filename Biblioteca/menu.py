@@ -1,4 +1,4 @@
-from biblioteca import Biblioteca
+from libro import Libro
 
 class Menu:
     
