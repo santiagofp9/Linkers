@@ -6,27 +6,27 @@ class Libro:
 		self.isbn = isbn;
 
 	def setTitulo(self, titulo):
-		self.titulo = titulo;
+		self.titulo = titulo
 
 	def getTitulo(self):
-		return self.titulo;
+		return self.titulo
 
 	def setAutor(self, autor):
-		self.autor = autor;
+		self.autor = autor
 
 	def getAutor(self):
-		return self.autor;
+		return self.autor
 
 	def setEditorial(self, editorial):
-		self.editorial = editorial;
+		self.editorial = editorial
 
 	def getEditorial(self):
-		return self.editorial;
+		return self.editorial
 
 	def setISBN(self, isbn):
-		self.isbn = isbn;
+		self.isbn = isbn
 
 	def getISBN(self):
-		return self.isbn;
+		return self.isbn
 
 #libro1 = Libro("La Sombra del Viento", "Carlos Ruíz Zafón", "Planeta", "9788408043645");
