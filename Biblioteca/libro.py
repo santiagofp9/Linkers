@@ -29,3 +29,6 @@ class Libro:
 	def getISBN(self):
 		return self.isbn
 
+    def getDatos(self):
+        datos = ("TITULO: " + self.titulo + " AUTOR: " + self.autor + " EDITORIAL: " + self.editorial + " ISBN: " + self.isbn + '\n')
+        return datos
