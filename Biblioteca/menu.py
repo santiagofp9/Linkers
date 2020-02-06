@@ -11,8 +11,8 @@ class Menu:
         print("               ======================================")
 
         print("\n1.-Ingrese libro.")
-        print("2.-Consulte libros.")
-        print("3.-Buscar libros.")
+        print("2.-Mostrar Biblioteca")
+        print("3.-Consultar libros.")
         print("4.-Eliminar libros.")
         print("5.-Salir.")
 
