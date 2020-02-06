@@ -1,4 +1,4 @@
-from libro import Libro
+from biblioteca import Biblioteca
 
 class Menu:
     
@@ -12,7 +12,9 @@ class Menu:
 
         print("\n1.-Ingrese libro.")
         print("2.-Consulte libros.")
-        print("3.-Salir.")
+        print("3.-Buscar libros.")
+        print("4.-Eliminar libros.")
+        print("5.-Salir.")
 
     def subMenu(self):
         print("\n¿Desea ingresar otro libro?")
