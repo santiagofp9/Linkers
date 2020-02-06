@@ -68,26 +68,29 @@ class Biblioteca:
         f.close()
 
     def eliminar(self):
-        f = open('biblioteca.txt','r+')
-        contenido = f.readlines()
-        for i in enumerate(contenido):
-            print(i[0], " - " ,i[1][:-1])        
-        
-        seleccion = int(input("\nElija el libro que desea eliminar o escribe '666' para cancelar ->  "))
-        f.close()
-
-        if seleccion <= (len(contenido) - 1):
-            f = open('biblioteca.txt', 'w+')
-            for i in contenido:
-                if i != contenido[seleccion]:   
-                    f.write(i)   
-            print("\n            =============== Eliminado con éxito =================")
-        elif seleccion == 666:
+        try:
+            f = open('biblioteca.txt','r+')
+            contenido = f.readlines()
+            for i in enumerate(contenido):
+                print(i[0], " - " ,i[1][:-1])        
+            
+            seleccion = int(input("\nElija el libro que desea eliminar o escribe '666' para cancelar ->  "))
             f.close()
-            return
-        else:
-            print("Indice no válido")
-        f.close()
+
+            if seleccion <= (len(contenido) - 1):
+                f = open('biblioteca.txt', 'w+')
+                for i in contenido:
+                    if i != contenido[seleccion]:   
+                        f.write(i)   
+                print("\n            =============== Eliminado con éxito =================")
+            elif seleccion == 666:
+                f.close()
+                return
+            else:
+                print("Indice no válido")
+            f.close()
+        except ValueError:
+            print("\nNo se permiten letras ni caracteres especiales")
 
     def iniciar(self,opcion):
         while(opcion!=3):
