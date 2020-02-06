@@ -1,14 +1,10 @@
 class Libro:
-    titulo=''
-    autor=''
-    editorial=''
-    isbn=''
-    
-    def __init__(self):
-        self.titulo=str(input("\nIngrese título: "))
-        self.autor=str(input("Ingrese autor: "))   
-        self.editorial=str(input("Ingrese editorial: "))
-        self.isbn=input("Ingrese isbn: ")
+
+    def __init__(self,titulo,autor,editorial,isbn):
+        self.titulo=titulo
+        self.autor=autor 
+        self.editorial=editorial
+        self.isbn=isbn
     
     def set_titulo(self, titulo):
         self.titulo = titulo
@@ -35,7 +31,6 @@ class Libro:
         return self.isbn
 
     def getDatos(self):
-        self.biblioteca = open("biblioteca.txt", "at")
-        self.biblioteca.write("Título: "+self.get_titulo()+", Autor: "+self.get_autor()+", Editorial: "+self.get_editorial()+", ISBN: "+self.get_isbn()+"\n")
-        self.biblioteca.close()
+        datos=("Título: "+self.get_titulo()+", Autor: "+self.get_autor()+", Editorial: "+self.get_editorial()+", ISBN: "+self.get_isbn()+"\n")
+        return datos
 
