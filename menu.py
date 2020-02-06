@@ -54,17 +54,39 @@ class Menu:
     def consultar(self):
         f = open("biblioteca.txt", "r")
         
-        buscar = input("Ingrese la palabra por la que quiera buscar -> ")  
+        buscar = input("Ingrese la palabra por la que quiera buscar: ")  
         if buscar != "":
             exists = False
             for i in f.readlines():
                 if str.lower(buscar) in str.lower(i):
                     exists = True
-                    print(i)
+                    print("\n"+i)
             if not exists: 
                 print("No hay registros con esos datos")
         else:
             print("Consulta vacía")
+        f.close()
+
+    def eliminar(self):
+        f = open('biblioteca.txt','r+')
+        contenido = f.readlines()
+        for i in enumerate(contenido):
+            print(i[0], " - " ,i[1][:-1])        
+        
+        seleccion = int(input("\nElija el libro que desea eliminar o escribe '666' para cancelar ->  "))
+        f.close()
+
+        if seleccion <= (len(contenido) - 1):
+            f = open('biblioteca.txt', 'w+')
+            for i in contenido:
+                if i != contenido[seleccion]:   
+                    f.write(i)   
+            print("\n            =============== Eliminado con éxito =================")
+        elif seleccion == 666:
+            f.close()
+            return
+        else:
+            print("Indice no válido")
         f.close()
 
     def iniciar(self,opcion):
@@ -79,31 +101,35 @@ class Menu:
                     continue
                 elif(op=="2"):
                     self.menu_inicial()                    
-                    opcion=input("Ingrese opción: ")
+                    opcion=input("\nIngrese opción: ")
                 elif(op=="3"):        
                     break
                 else:
                     print("Opción Incorrecta")
                     self.subMenu()
-                    op=input("Ingrese opción: ")
+                    op=input("\nIngrese opción: ")
             elif opcion=="2":
                 print("\n                       =============== BIBLIOTECA ==============\n")
                 self.listar()
                 self.menu_inicial()
-                opcion=input("Ingrese opción: ")
+                opcion=input("\nIngrese opción: ")
             elif opcion=="3":
                 print("\n                       =============== Busqueda ==============\n")
                 self.consultar()
                 self.menu_inicial()
-                opcion=input("Ingrese opción: ")
+                opcion=input("\nIngrese opción: ")
             elif opcion=="4":
-                print()
+                print("\n                       =============== Eliminar ==============\n")
+                self.eliminar()
+                self.menu_inicial()
+                opcion=input("\nIngrese opción: ")
             elif opcion=="5":
+                print("\n                =================== Hasta Pronto ==================")
                 break
             else:
                 print("Opción Incorrecta")
                 self.menu_inicial()
-                opcion=input("Ingrese opción: ")
+                opcion=input("\nIngrese opción: ")
 
 menu1=Menu()
 menu1.menu_inicial()
