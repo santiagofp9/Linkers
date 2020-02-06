@@ -19,7 +19,8 @@ class Biblioteca:
 	def yaAgregado(self):
 		with open(self.nombreArchivo) as est:
 			libros = est.readlines();
-			l.lower() for l in libros;
+			for l in libros:
+				l.lower()
 			if(", ISBN: "+self.libro.getISBN()+"\n").lower() in libros:
 				return True;
 			else:
