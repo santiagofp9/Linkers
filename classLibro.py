@@ -34,7 +34,7 @@ class Libro:
     def get_isbn(self):
         return self.isbn
 
-    def agregarLibro(self):
+    def getDatos(self):
         self.biblioteca = open("biblioteca.txt", "at")
         self.biblioteca.write("Título: "+self.get_titulo()+", Autor: "+self.get_autor()+", Editorial: "+self.get_editorial()+", ISBN: "+self.get_isbn()+"\n")
         self.biblioteca.close()
