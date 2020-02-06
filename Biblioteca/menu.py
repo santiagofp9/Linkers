@@ -27,11 +27,6 @@ class Menu:
         print("                            AGREGAR LIBRO            ")
         print("               ======================================")
 
-    def consultar(self):
-        file=open("biblioteca.txt","r")
-        print(file.read())
-        file.close()
-
     def iniciar(self,opcion):
         while(opcion!=3):
             if  opcion=="1":       
@@ -53,10 +48,12 @@ class Menu:
                     menu1.subMenu()
                     op=input("Ingrese opción: ")
             elif opcion=="2":
-                menu1.consultar()
+                newLibro.consultarLibro()
                 menu1.menu_inicial()
                 opcion=input("Ingrese opción: ")
-            elif opcion=="3":
+            elif opcion=="4":
+                print()
+            elif opcion=="5":
                 break
             else:
                 print("Opción Incorrecta")
