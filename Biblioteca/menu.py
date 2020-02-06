@@ -36,7 +36,7 @@ class Menu:
         while(opcion!=3):
             if  opcion=="1":       
                 menu1.menuLibro()
-                newLibro=Libro()
+                newLibro=Biblioteca()
                 newLibro.agregarLibro()
                 print("\n")
                 menu1.subMenu()
