@@ -29,4 +29,3 @@ class Libro:
 	def getISBN(self):
 		return self.isbn
 
-#libro1 = Libro("La Sombra del Viento", "Carlos Ruíz Zafón", "Planeta", "9788408043645");
