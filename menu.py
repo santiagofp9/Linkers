@@ -1,4 +1,4 @@
-from libro import Libro
+from classLibro import Libro
 
 class Menu:
     
@@ -26,13 +26,34 @@ class Menu:
         print("\n               ======================================")
         print("                            AGREGAR LIBRO            ")
         print("               ======================================")
+    
+    def agregar(self):    
+        titulo = str(input("TITULO: "))
+        autor = str(input("AUTOR: "))
+        editorial = str(input("EDITORIAL: "))
+        isbn = str(input("ISBN: "))
+
+        libro = Libro(titulo, autor, editorial, isbn)
+        f = open("biblioteca.txt", "a")
+        f.close()
+
+        f = open("biblioteca.txt", "r")
+
+        
+        if str.lower(titulo) in str.lower(f.read()):
+            print("Ese libro ya existe")
+        else:
+            f.close()
+            f = open("biblioteca.txt", "at")
+            f.write(libro.getDatos()) 
+            f.close()
+            print("Agregado con éxito")
 
     def iniciar(self,opcion):
         while(opcion!=3):
             if  opcion=="1":       
                 menu1.menuLibro()
-                newLibro=Biblioteca()
-                newLibro.agregarLibro()
+                menu1.agregar()
                 print("\n")
                 menu1.subMenu()
                 op=input("Elija su opcion: ")
