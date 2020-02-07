@@ -45,11 +45,14 @@ class Biblioteca:
             print("Agregado con éxito")
 
     def listar(self):
-        f = open("biblioteca.txt", "r")
-        contenido = f.readlines()
-        for i in contenido:
-            print(i) 
-        f.close()
+        try:
+            f = open("biblioteca.txt", "r")
+            contenido = f.readlines()
+            for i in contenido:
+                print(i) 
+            f.close()
+        except FileNotFoundError:
+            print("\nLa libreria está vacia")
 
     def consultar(self):
         f = open("biblioteca.txt", "r")
