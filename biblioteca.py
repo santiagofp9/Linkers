@@ -55,45 +55,51 @@ class Biblioteca:
             print("\nLa libreria está vacia")
 
     def consultar(self):
-        f = open("biblioteca.txt", "r")
-        
-        buscar = input("Ingrese la palabra por la que quiera buscar: ")  
-        if buscar != "":
-            exists = False
-            for i in f.readlines():
-                if str.lower(buscar) in str.lower(i):
-                    exists = True
-                    print("\n"+i)
-            if not exists: 
-                print("No hay registros con esos datos")
-        else:
-            print("Consulta vacía")
-        f.close()
+        try:
+            f = open("biblioteca.txt", "r")
+            
+            buscar = input("Ingrese la palabra por la que quiera buscar: ")  
+            if buscar != "":
+                exists = False
+                for i in f.readlines():
+                    if str.lower(buscar) in str.lower(i):
+                        exists = True
+                        print("\n"+i)
+                if not exists: 
+                    print("No hay registros con esos datos")
+            else:
+                print("Consulta vacía")
+            f.close()
+        except FileNotFoundError:
+            print("\nLa libreria está vacia")
 
     def eliminar(self):
         try:
-            f = open('biblioteca.txt','r+')
-            contenido = f.readlines()
-            for i in enumerate(contenido):
-                print(i[0], " - " ,i[1][:-1])        
-            
-            seleccion = int(input("\nElija el libro que desea eliminar o escribe '666' para cancelar ->  "))
-            f.close()
-
-            if seleccion <= (len(contenido) - 1):
-                f = open('biblioteca.txt', 'w+')
-                for i in contenido:
-                    if i != contenido[seleccion]:   
-                        f.write(i)   
-                print("\n            =============== Eliminado con éxito =================")
-            elif seleccion == 666:
+            try:
+                f = open('biblioteca.txt','r+')
+                contenido = f.readlines()
+                for i in enumerate(contenido):
+                    print(i[0], " - " ,i[1][:-1])        
+                
+                seleccion = int(input("\nElija el libro que desea eliminar o escribe '666' para cancelar ->  "))
                 f.close()
-                return
-            else:
-                print("Indice no válido")
-            f.close()
-        except ValueError:
-            print("\nNo se permiten letras ni caracteres especiales")
+
+                if seleccion <= (len(contenido) - 1) and seleccion >=0:
+                    f = open('biblioteca.txt', 'w+')
+                    for i in contenido:
+                        if i != contenido[seleccion]:   
+                            f.write(i)   
+                    print("\n            =============== Eliminado con éxito =================")
+                elif seleccion == 666:
+                    f.close()
+                    return
+                else:
+                    print("Indice no válido")
+                f.close()
+            except ValueError:
+                print("\nNo se permiten letras ni caracteres especiales")
+        except FileNotFoundError:
+            print("\nLa libreria está vacia")
 
     def iniciar(self,opcion):
         while(opcion!=3):
